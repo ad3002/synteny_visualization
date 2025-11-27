@@ -210,6 +210,180 @@ def normalize_species_coordinates(
     )
 
 
+def get_gene_order(species: Species) -> dict[str, int]:
+    """Get gene order by orthogroup (position index in sorted order)."""
+    sorted_genes = sorted(
+        [g for g in species.genes if g.orthogroup],
+        key=lambda g: g.center
+    )
+    return {g.orthogroup: i for i, g in enumerate(sorted_genes)}
+
+
+def calculate_synteny_similarity(sp1: Species, sp2: Species) -> float:
+    """Calculate synteny similarity based on gene order correlation.
+
+    Uses Spearman-like rank correlation: how similar is the order of shared genes.
+    Returns value between -1 (inverted) and 1 (identical order).
+    """
+    order1 = get_gene_order(sp1)
+    order2 = get_gene_order(sp2)
+
+    # Find shared orthogroups
+    shared = set(order1.keys()) & set(order2.keys())
+    if len(shared) < 2:
+        return 0.0
+
+    # Get ranks for shared genes
+    ranks1 = [order1[og] for og in shared]
+    ranks2 = [order2[og] for og in shared]
+
+    # Calculate Spearman correlation
+    n = len(shared)
+    mean1 = sum(ranks1) / n
+    mean2 = sum(ranks2) / n
+
+    numerator = sum((r1 - mean1) * (r2 - mean2) for r1, r2 in zip(ranks1, ranks2))
+    denom1 = sum((r - mean1) ** 2 for r in ranks1) ** 0.5
+    denom2 = sum((r - mean2) ** 2 for r in ranks2) ** 0.5
+
+    if denom1 == 0 or denom2 == 0:
+        return 0.0
+
+    return numerator / (denom1 * denom2)
+
+
+def build_distance_matrix(species_list: list[Species]) -> list[list[float]]:
+    """Build pairwise distance matrix based on synteny dissimilarity."""
+    n = len(species_list)
+    matrix = [[0.0] * n for _ in range(n)]
+
+    for i in range(n):
+        for j in range(i + 1, n):
+            # Similarity can be negative (inverted), so use abs for distance
+            sim = calculate_synteny_similarity(species_list[i], species_list[j])
+            # Convert to distance: 1 - |similarity| (0 = identical, 1 = unrelated)
+            dist = 1.0 - abs(sim)
+            matrix[i][j] = dist
+            matrix[j][i] = dist
+
+    return matrix
+
+
+def hierarchical_cluster_species(
+    species_list: list[Species],
+) -> list[Species]:
+    """Reorder species using hierarchical clustering by synteny similarity.
+
+    Groups similar species together to minimize visual rearrangements.
+    Uses simple agglomerative clustering with average linkage.
+    """
+    if len(species_list) <= 2:
+        return species_list
+
+    n = len(species_list)
+    dist_matrix = build_distance_matrix(species_list)
+
+    # Track which species belong to which cluster
+    # Initially each species is its own cluster
+    clusters: list[list[int]] = [[i] for i in range(n)]
+    active = set(range(n))  # Active cluster indices
+
+    # Agglomerative clustering
+    while len(active) > 1:
+        # Find closest pair of clusters
+        min_dist = float('inf')
+        merge_i, merge_j = -1, -1
+
+        active_list = sorted(active)
+        for i_idx, i in enumerate(active_list):
+            for j in active_list[i_idx + 1:]:
+                # Average linkage: mean distance between all pairs
+                total_dist = 0.0
+                count = 0
+                for si in clusters[i]:
+                    for sj in clusters[j]:
+                        total_dist += dist_matrix[si][sj]
+                        count += 1
+                avg_dist = total_dist / count if count > 0 else float('inf')
+
+                if avg_dist < min_dist:
+                    min_dist = avg_dist
+                    merge_i, merge_j = i, j
+
+        # Merge clusters
+        clusters[merge_i] = clusters[merge_i] + clusters[merge_j]
+        active.remove(merge_j)
+
+    # Get final order from the single remaining cluster
+    final_cluster_idx = list(active)[0]
+    ordered_indices = clusters[final_cluster_idx]
+
+    return [species_list[i] for i in ordered_indices]
+
+
+def optimize_species_order(
+    species_list: list[Species],
+    anchor_species: str | None = None,
+) -> list[Species]:
+    """Optimize species order to minimize total crossings.
+
+    1. Hierarchically cluster species by synteny similarity
+    2. Within clusters, order to minimize adjacent crossings
+    3. Optionally anchor a specific species at top
+
+    Args:
+        species_list: List of species to reorder
+        anchor_species: Species ID to keep at top (e.g., reference species)
+    """
+    if len(species_list) <= 1:
+        return species_list
+
+    # First, cluster hierarchically
+    clustered = hierarchical_cluster_species(species_list)
+
+    # If anchor species specified, rotate to put it first
+    if anchor_species:
+        anchor_idx = None
+        for i, sp in enumerate(clustered):
+            if sp.species_id == anchor_species:
+                anchor_idx = i
+                break
+        if anchor_idx is not None:
+            clustered = clustered[anchor_idx:] + clustered[:anchor_idx]
+
+    # Now optimize local order: for each adjacent pair, check if swapping reduces crossings
+    # Use greedy optimization with multiple passes
+    improved = True
+    max_passes = 10
+    passes = 0
+
+    while improved and passes < max_passes:
+        improved = False
+        passes += 1
+
+        for i in range(1, len(clustered) - 1):
+            # Try swapping species[i] with species[i+1]
+            # Calculate total crossings before and after
+
+            # Before: crossings(i-1, i) + crossings(i, i+1)
+            cross_before = (
+                count_crossings(clustered[i - 1], clustered[i]) +
+                count_crossings(clustered[i], clustered[i + 1])
+            )
+
+            # After swap: crossings(i-1, i+1) + crossings(i+1, i)
+            cross_after = (
+                count_crossings(clustered[i - 1], clustered[i + 1]) +
+                count_crossings(clustered[i + 1], clustered[i])
+            )
+
+            if cross_after < cross_before:
+                clustered[i], clustered[i + 1] = clustered[i + 1], clustered[i]
+                improved = True
+
+    return clustered
+
+
 def optimize_strand_orientation(species_list: list[Species]) -> list[Species]:
     """Optimize strand orientation to minimize crossings.
 
@@ -284,6 +458,8 @@ def load_synteny_from_csv_folder(
     anchor_orthogroup: str | None = None,
     max_distance: int | None = None,
     optimize_strands: bool = True,
+    optimize_order: bool = False,
+    anchor_species: str | None = None,
     color_conserved: bool = False,
 ) -> SyntenyData:
     """Load complete synteny data from a folder with CSV files.
@@ -298,6 +474,8 @@ def load_synteny_from_csv_folder(
         anchor_orthogroup: Orthogroup to use as anchor for alignment
         max_distance: Maximum distance from anchor to include genes (bp)
         optimize_strands: If True, flip species to minimize link crossings
+        optimize_order: If True, reorder species by synteny similarity (hierarchical clustering)
+        anchor_species: Species ID to keep at top when optimizing order
         color_conserved: If True, color genes present in all species
 
     Returns:
@@ -338,6 +516,10 @@ def load_synteny_from_csv_folder(
             if normalize:
                 species = normalize_species_coordinates(species, anchor_orthogroup, max_distance)
             species_list.append(species)
+
+    # Optimize species order by synteny similarity (hierarchical clustering)
+    if optimize_order and len(species_list) > 2:
+        species_list = optimize_species_order(species_list, anchor_species)
 
     # Optimize strand orientations to minimize crossings
     if optimize_strands and len(species_list) > 1:
