@@ -1,0 +1,143 @@
+{
+  "title": null,
+  "species": [
+    {
+      "species_id": "zebrafish",
+      "display_name": "Zebrafish",
+      "genes": [
+        {"gene_id": "zf:fbxw7", "name": "FBXW7", "chrom": "chr1", "start": 0, "end": 80000, "strand": "+", "orthogroup": "FBXW7"},
+        {"gene_id": "zf:tmem154", "name": "TMEM154", "chrom": "chr1", "start": 400000, "end": 450000, "strand": "+", "orthogroup": "TMEM154"},
+        {"gene_id": "zf:arfip1", "name": "ARFIP1", "chrom": "chr1", "start": 900000, "end": 950000, "strand": "+", "orthogroup": "ARFIP1"},
+        {"gene_id": "zf:fhdc1", "name": "FHDC1", "chrom": "chr1", "start": 1000000, "end": 1050000, "strand": "+", "orthogroup": "FHDC1"}
+      ]
+    },
+    {
+      "species_id": "xenopus_s",
+      "display_name": "Xenopus laevis S",
+      "genes": [
+        {"gene_id": "xls:fbxw7", "name": "FBXW7", "chrom": "chrS", "start": 50000, "end": 130000, "strand": "+", "orthogroup": "FBXW7"},
+        {"gene_id": "xls:tmem154", "name": "TMEM154", "chrom": "chrS", "start": 420000, "end": 480000, "strand": "+", "orthogroup": "TMEM154"},
+        {"gene_id": "xls:arfip1", "name": "ARFIP1", "chrom": "chrS", "start": 850000, "end": 920000, "strand": "+", "orthogroup": "ARFIP1"},
+        {"gene_id": "xls:fhdc1", "name": "FHDC1", "chrom": "chrS", "start": 980000, "end": 1040000, "strand": "+", "orthogroup": "FHDC1"}
+      ]
+    },
+    {
+      "species_id": "xenopus_l",
+      "display_name": "Xenopus laevis L",
+      "genes": [
+        {"gene_id": "xll:fbxw7", "name": "FBXW7", "chrom": "chrL", "start": 30000, "end": 110000, "strand": "+", "orthogroup": "FBXW7"},
+        {"gene_id": "xll:tmem154", "name": "TMEM154", "chrom": "chrL", "start": 380000, "end": 450000, "strand": "+", "orthogroup": "TMEM154"},
+        {"gene_id": "xll:arfip1", "name": "ARFIP1", "chrom": "chrL", "start": 820000, "end": 900000, "strand": "+", "orthogroup": "ARFIP1"},
+        {"gene_id": "xll:fhdc1", "name": "FHDC1", "chrom": "chrL", "start": 950000, "end": 1020000, "strand": "+", "orthogroup": "FHDC1"}
+      ]
+    },
+    {
+      "species_id": "xenopus_t",
+      "display_name": "Xenopus tropicalis",
+      "genes": [
+        {"gene_id": "xt:fbxw7", "name": "FBXW7", "chrom": "chr4", "start": 40000, "end": 120000, "strand": "+", "orthogroup": "FBXW7"},
+        {"gene_id": "xt:tmem154", "name": "TMEM154", "chrom": "chr4", "start": 400000, "end": 460000, "strand": "+", "orthogroup": "TMEM154"},
+        {"gene_id": "xt:arfip1", "name": "ARFIP1", "chrom": "chr4", "start": 840000, "end": 910000, "strand": "+", "orthogroup": "ARFIP1"},
+        {"gene_id": "xt:fhdc1", "name": "FHDC1", "chrom": "chr4", "start": 970000, "end": 1030000, "strand": "+", "orthogroup": "FHDC1"}
+      ]
+    },
+    {
+      "species_id": "chicken",
+      "display_name": "Chicken",
+      "genes": [
+        {"gene_id": "gg:fbxw7", "name": "FBXW7", "chrom": "chr4", "start": 60000, "end": 140000, "strand": "+", "orthogroup": "FBXW7"},
+        {"gene_id": "gg:tmem154", "name": "TMEM154", "chrom": "chr4", "start": 440000, "end": 500000, "strand": "+", "orthogroup": "TMEM154"},
+        {"gene_id": "gg:arfip1", "name": "ARFIP1", "chrom": "chr4", "start": 860000, "end": 930000, "strand": "+", "orthogroup": "ARFIP1"},
+        {"gene_id": "gg:fhdc1", "name": "FHDC1", "chrom": "chr4", "start": 990000, "end": 1060000, "strand": "+", "orthogroup": "FHDC1"}
+      ]
+    },
+    {
+      "species_id": "quail",
+      "display_name": "Quail",
+      "genes": [
+        {"gene_id": "cj:fbxw7", "name": "FBXW7", "chrom": "chr4", "start": 55000, "end": 135000, "strand": "+", "orthogroup": "FBXW7"},
+        {"gene_id": "cj:tmem154", "name": "TMEM154", "chrom": "chr4", "start": 430000, "end": 490000, "strand": "+", "orthogroup": "TMEM154"},
+        {"gene_id": "cj:arfip1", "name": "ARFIP1", "chrom": "chr4", "start": 855000, "end": 920000, "strand": "+", "orthogroup": "ARFIP1"},
+        {"gene_id": "cj:fhdc1", "name": "FHDC1", "chrom": "chr4", "start": 985000, "end": 1050000, "strand": "+", "orthogroup": "FHDC1"}
+      ]
+    },
+    {
+      "species_id": "zebra_finch",
+      "display_name": "Zebra finch",
+      "genes": [
+        {"gene_id": "tg:fbxw7", "name": "FBXW7", "chrom": "chr4", "start": 45000, "end": 125000, "strand": "+", "orthogroup": "FBXW7"},
+        {"gene_id": "tg:tmem154", "name": "TMEM154", "chrom": "chr4", "start": 410000, "end": 470000, "strand": "+", "orthogroup": "TMEM154"},
+        {"gene_id": "tg:tigd4", "name": "TIGD4", "chrom": "chr4", "start": 650000, "end": 680000, "strand": "+", "orthogroup": "TIGD4"},
+        {"gene_id": "tg:arfip1", "name": "ARFIP1", "chrom": "chr4", "start": 845000, "end": 910000, "strand": "+", "orthogroup": "ARFIP1"},
+        {"gene_id": "tg:fhdc1", "name": "FHDC1", "chrom": "chr4", "start": 975000, "end": 1040000, "strand": "+", "orthogroup": "FHDC1"}
+      ]
+    },
+    {
+      "species_id": "canary",
+      "display_name": "Canary",
+      "genes": [
+        {"gene_id": "sc:fbxw7", "name": "FBXW7", "chrom": "chr4", "start": 50000, "end": 130000, "strand": "+", "orthogroup": "FBXW7"},
+        {"gene_id": "sc:tmem154", "name": "TMEM154", "chrom": "chr4", "start": 420000, "end": 480000, "strand": "+", "orthogroup": "TMEM154"},
+        {"gene_id": "sc:tigd4", "name": "TIGD4", "chrom": "chr4", "start": 660000, "end": 690000, "strand": "+", "orthogroup": "TIGD4"},
+        {"gene_id": "sc:arfip1", "name": "ARFIP1", "chrom": "chr4", "start": 850000, "end": 920000, "strand": "+", "orthogroup": "ARFIP1"},
+        {"gene_id": "sc:fhdc1", "name": "FHDC1", "chrom": "chr4", "start": 980000, "end": 1050000, "strand": "+", "orthogroup": "FHDC1"}
+      ]
+    },
+    {
+      "species_id": "anolis",
+      "display_name": "Anolis lizard",
+      "genes": [
+        {"gene_id": "ac:fbxw7", "name": "FBXW7", "chrom": "chr2", "start": 70000, "end": 150000, "strand": "+", "orthogroup": "FBXW7"},
+        {"gene_id": "ac:tmem154", "name": "TMEM154", "chrom": "chr2", "start": 450000, "end": 510000, "strand": "+", "orthogroup": "TMEM154"},
+        {"gene_id": "ac:tigd4", "name": "TIGD4", "chrom": "chr2", "start": 680000, "end": 710000, "strand": "+", "orthogroup": "TIGD4"},
+        {"gene_id": "ac:arfip1", "name": "ARFIP1", "chrom": "chr2", "start": 870000, "end": 940000, "strand": "+", "orthogroup": "ARFIP1"},
+        {"gene_id": "ac:fhdc1", "name": "FHDC1", "chrom": "chr2", "start": 1000000, "end": 1070000, "strand": "+", "orthogroup": "FHDC1"}
+      ]
+    },
+    {
+      "species_id": "mouse",
+      "display_name": "Mouse",
+      "genes": [
+        {"gene_id": "mm:fbxw7", "name": "FBXW7", "chrom": "chr3", "start": 35000, "end": 115000, "strand": "+", "orthogroup": "FBXW7"},
+        {"gene_id": "mm:tmem154", "name": "TMEM154", "chrom": "chr3", "start": 390000, "end": 450000, "strand": "+", "orthogroup": "TMEM154"},
+        {"gene_id": "mm:tigd4", "name": "TIGD4", "chrom": "chr3", "start": 640000, "end": 670000, "strand": "+", "orthogroup": "TIGD4"},
+        {"gene_id": "mm:arfip1", "name": "ARFIP1", "chrom": "chr3", "start": 830000, "end": 900000, "strand": "+", "orthogroup": "ARFIP1"},
+        {"gene_id": "mm:fhdc1", "name": "FHDC1", "chrom": "chr3", "start": 960000, "end": 1030000, "strand": "+", "orthogroup": "FHDC1"}
+      ]
+    },
+    {
+      "species_id": "human",
+      "display_name": "Human",
+      "genes": [
+        {"gene_id": "hs:fbxw7", "name": "FBXW7", "chrom": "chr4", "start": 25000, "end": 105000, "strand": "+", "orthogroup": "FBXW7"},
+        {"gene_id": "hs:tmem154", "name": "TMEM154", "chrom": "chr4", "start": 370000, "end": 430000, "strand": "+", "orthogroup": "TMEM154"},
+        {"gene_id": "hs:tigd4", "name": "TIGD4", "chrom": "chr4", "start": 620000, "end": 660000, "strand": "+", "orthogroup": "TIGD4"},
+        {"gene_id": "hs:arfip1", "name": "ARFIP1", "chrom": "chr4", "start": 810000, "end": 880000, "strand": "+", "orthogroup": "ARFIP1"},
+        {"gene_id": "hs:fhdc1", "name": "FHDC1", "chrom": "chr4", "start": 940000, "end": 1010000, "strand": "+", "orthogroup": "FHDC1"}
+      ]
+    }
+  ],
+  "highlights": [
+    {"name": "TIGD4", "color": "#e74c3c", "label": "Gene: TIGD4"}
+  ],
+  "style": {
+    "gene_color": "#808080",
+    "gene_border_color": "#404040",
+    "link_color": "#cccccc",
+    "link_alpha": 0.4,
+    "highlight_link_alpha": 0.6,
+    "chromosome_color": "#000000",
+    "gene_height": 0.25,
+    "chromosome_width": 1.0,
+    "species_spacing": 1.0,
+    "figure_width": 16,
+    "figure_height_per_species": 0.7,
+    "dpi": 150,
+    "species_font_size": 10,
+    "gene_label_font_size": 8,
+    "scale_font_size": 9,
+    "show_scale_bar": true,
+    "show_gene_labels": true,
+    "gene_label_position": "bottom"
+  }
+}

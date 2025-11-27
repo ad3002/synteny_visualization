@@ -1,0 +1,36 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "synteny-viz"
+version = "0.1.0"
+description = "Synteny visualization tool for comparative genomics"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+authors = [
+    { name = "Aleksey Komissarov", email = "ad3002@gmail.com" }
+]
+dependencies = [
+    "matplotlib>=3.7",
+    "pydantic>=2.0",
+    "typer>=0.9",
+    "rich>=13.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "ruff>=0.1",
+]
+
+[project.scripts]
+synteny-viz = "synteny_viz.cli:app"
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W"]
