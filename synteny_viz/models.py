@@ -98,6 +98,17 @@ class StyleConfig(BaseModel):
     gene_label_position: Literal["bottom", "inside", "none"] = Field(default="bottom")
 
 
+class SpeciesGroup(BaseModel):
+    """Group of species for bracket annotation."""
+
+    name: str = Field(..., description="Group name (e.g., 'Mammals', 'Birds')")
+    species_ids: list[str] = Field(..., description="Species IDs in this group")
+    color: str = Field(default="#333333", description="Bracket color")
+    children: list["SpeciesGroup"] = Field(
+        default_factory=list, description="Nested subgroups for hierarchical brackets"
+    )
+
+
 class SyntenyData(BaseModel):
     """Complete synteny visualization data."""
 
@@ -105,6 +116,9 @@ class SyntenyData(BaseModel):
     species: list[Species] = Field(..., description="Species in display order (top to bottom)")
     highlights: list[HighlightGene] = Field(
         default_factory=list, description="Genes to highlight"
+    )
+    groups: list[SpeciesGroup] = Field(
+        default_factory=list, description="Species groups for bracket annotations"
     )
     style: StyleConfig = Field(default_factory=StyleConfig)
 
@@ -129,6 +143,29 @@ class SyntenyData(BaseModel):
             if h.orthogroup and gene.orthogroup and gene.orthogroup == h.orthogroup:
                 return h
         return None
+
+    def count_shared_orthogroups(self, species_ids: list[str]) -> int:
+        """Count orthogroups shared by all species in the list."""
+        if not species_ids:
+            return 0
+
+        # Get orthogroups for each species
+        og_by_species: list[set[str]] = []
+        for sp_id in species_ids:
+            sp = next((s for s in self.species if s.species_id == sp_id), None)
+            if sp:
+                og_set = {g.orthogroup for g in sp.genes if g.orthogroup}
+                og_by_species.append(og_set)
+
+        if not og_by_species:
+            return 0
+
+        # Intersection of all
+        shared = og_by_species[0]
+        for og_set in og_by_species[1:]:
+            shared = shared & og_set
+
+        return len(shared)
 
     @classmethod
     def from_json_file(cls, path: str | Path) -> "SyntenyData":

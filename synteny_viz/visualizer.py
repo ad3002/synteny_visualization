@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 from matplotlib.collections import PatchCollection
 from matplotlib.patches import FancyBboxPatch, Polygon, Rectangle
 
-from .models import Gene, HighlightGene, Species, SyntenyData, StyleConfig
+from .models import Gene, HighlightGene, Species, SpeciesGroup, SyntenyData, StyleConfig
 
 
 class SyntenyVisualizer:
@@ -31,6 +31,7 @@ class SyntenyVisualizer:
         self._draw_scale_bar()
         self._draw_orthology_links()
         self._draw_species()
+        self._draw_group_brackets()
         self._draw_legend()
         self._finalize()
 
@@ -319,6 +320,108 @@ class SyntenyVisualizer:
             fontsize=self.style.species_font_size,
             style="italic",
         )
+
+    def _draw_group_brackets(self) -> None:
+        """Draw hierarchical brackets on the right side for species groups."""
+        if not self.data.groups:
+            return
+
+        # Calculate bracket positions
+        # Start from x=1.02 and increase for nested levels
+        base_x = 1.02
+        bracket_spacing = 0.06
+
+        def get_group_y_range(group: SpeciesGroup) -> tuple[float, float] | None:
+            """Get Y coordinate range for a group based on its species."""
+            y_values = []
+            for sp_id in group.species_ids:
+                if sp_id in self._species_y:
+                    y_values.append(self._species_y[sp_id])
+            if not y_values:
+                return None
+            return (min(y_values), max(y_values))
+
+        def draw_bracket(
+            group: SpeciesGroup,
+            level: int = 0,
+        ) -> None:
+            """Recursively draw a bracket and its children."""
+            y_range = get_group_y_range(group)
+            if y_range is None:
+                return
+
+            y_min, y_max = y_range
+            x = base_x + level * bracket_spacing
+
+            # Draw bracket: vertical line with horizontal caps
+            line_width = 1.5
+            cap_length = 0.015
+
+            # Vertical line
+            self._ax.plot(
+                [x, x],
+                [y_min, y_max],
+                color=group.color,
+                linewidth=line_width,
+                solid_capstyle="round",
+            )
+
+            # Top cap
+            self._ax.plot(
+                [x - cap_length, x],
+                [y_max, y_max],
+                color=group.color,
+                linewidth=line_width,
+                solid_capstyle="round",
+            )
+
+            # Bottom cap
+            self._ax.plot(
+                [x - cap_length, x],
+                [y_min, y_min],
+                color=group.color,
+                linewidth=line_width,
+                solid_capstyle="round",
+            )
+
+            # Count shared genes in this group
+            shared_count = self.data.count_shared_orthogroups(group.species_ids)
+
+            # Draw label with count
+            y_center = (y_min + y_max) / 2
+            label = f"{group.name} ({shared_count})"
+
+            # Rotate text for tall brackets (more than 2 species span)
+            bracket_height = abs(y_max - y_min)
+            if bracket_height > 1.5 * self.style.species_spacing:
+                self._ax.text(
+                    x + 0.015,
+                    y_center,
+                    label,
+                    ha="left",
+                    va="center",
+                    fontsize=self.style.gene_label_font_size,
+                    color=group.color,
+                    rotation=270,
+                )
+            else:
+                self._ax.text(
+                    x + 0.01,
+                    y_center,
+                    label,
+                    ha="left",
+                    va="center",
+                    fontsize=self.style.gene_label_font_size,
+                    color=group.color,
+                )
+
+            # Draw child brackets
+            for child in group.children:
+                draw_bracket(child, level + 1)
+
+        # Draw all top-level groups
+        for group in self.data.groups:
+            draw_bracket(group)
 
     def _draw_legend(self) -> None:
         """Draw legend for highlighted genes."""

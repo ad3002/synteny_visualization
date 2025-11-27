@@ -3,7 +3,7 @@
 import csv
 from pathlib import Path
 
-from ..models import Gene, Species, SyntenyData, HighlightGene, StyleConfig
+from ..models import Gene, Species, SpeciesGroup, SyntenyData, HighlightGene, StyleConfig
 
 
 def load_orthogroups_from_attributes(path: str | Path) -> dict[str, str]:
@@ -584,6 +584,7 @@ def load_synteny_from_csv_folder(
     return SyntenyData(
         species=species_list,
         highlights=highlights,
+        groups=[],  # Groups can be added manually after loading
         style=StyleConfig(
             figure_width=16,
             figure_height_per_species=0.7,
