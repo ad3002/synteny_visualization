@@ -75,11 +75,12 @@ class SyntenyVisualizer:
     def _create_figure(self) -> None:
         """Create matplotlib figure and axes."""
         n_species = len(self.data.species)
-        height = n_species * self.style.figure_height_per_species + 1.5
+        height = n_species * self.style.figure_height_per_species + 2.0
 
         self._fig, self._ax = plt.subplots(figsize=(self.style.figure_width, height))
-        self._ax.set_xlim(-0.05, 1.1)
-        y_min = -(n_species - 1) * self.style.species_spacing - 0.5
+        self._ax.set_xlim(-0.22, 1.05)
+        # Extra space at bottom for gene labels
+        y_min = -(n_species - 1) * self.style.species_spacing - 1.0
         self._ax.set_ylim(y_min, 1.0)
         self._ax.set_aspect("auto")
         self._ax.axis("off")
@@ -185,17 +186,64 @@ class SyntenyVisualizer:
             self._draw_species_label(sp, y)
 
     def _draw_chromosome_line(self, species: Species, y: float) -> None:
-        """Draw the chromosome backbone line."""
+        """Draw the chromosome backbone line with gap indicators."""
         if not species.genes:
             return
 
-        x_start = species.region_start * self._x_scale + self._x_offset
-        x_end = species.region_end * self._x_scale + self._x_offset
+        # Sort genes by position
+        sorted_genes = sorted(species.genes, key=lambda g: g.start)
 
-        # Add some padding
+        # Detect gaps - if distance between genes is > 3x median intergenic distance
+        intergenic_distances = []
+        for i in range(len(sorted_genes) - 1):
+            dist = sorted_genes[i + 1].start - sorted_genes[i].end
+            if dist > 0:
+                intergenic_distances.append(dist)
+
+        # Determine gap threshold
+        if intergenic_distances:
+            median_dist = sorted(intergenic_distances)[len(intergenic_distances) // 2]
+            gap_threshold = max(median_dist * 5, 500000)  # At least 500kb
+        else:
+            gap_threshold = float('inf')
+
+        # Draw chromosome segments with gaps
         padding = 0.02
+        current_x = sorted_genes[0].start * self._x_scale + self._x_offset - padding
+
+        for i, gene in enumerate(sorted_genes):
+            gene_start_x = gene.start * self._x_scale + self._x_offset
+            gene_end_x = gene.end * self._x_scale + self._x_offset
+
+            if i > 0:
+                prev_gene = sorted_genes[i - 1]
+                gap = gene.start - prev_gene.end
+
+                if gap > gap_threshold:
+                    # Draw solid line up to gap
+                    prev_end_x = prev_gene.end * self._x_scale + self._x_offset
+                    self._ax.plot(
+                        [current_x, prev_end_x + padding],
+                        [y, y],
+                        color=self.style.chromosome_color,
+                        linewidth=self.style.chromosome_width,
+                        solid_capstyle="round",
+                    )
+                    # Draw dashed line for gap
+                    self._ax.plot(
+                        [prev_end_x + padding, gene_start_x - padding],
+                        [y, y],
+                        color=self.style.chromosome_color,
+                        linewidth=self.style.chromosome_width * 0.5,
+                        linestyle="--",
+                        dashes=(3, 3),
+                    )
+                    current_x = gene_start_x - padding
+
+        # Draw final segment
+        x_end = sorted_genes[-1].end * self._x_scale + self._x_offset
         self._ax.plot(
-            [x_start - padding, x_end + padding],
+            [current_x, x_end + padding],
             [y, y],
             color=self.style.chromosome_color,
             linewidth=self.style.chromosome_width,
@@ -220,15 +268,28 @@ class SyntenyVisualizer:
             else:
                 facecolor = self.style.gene_color
 
-            rect = FancyBboxPatch(
-                (x, y - half_h),
-                width,
-                self.style.gene_height,
-                boxstyle="round,pad=0,rounding_size=0.02",
-                facecolor=facecolor,
-                edgecolor=self.style.gene_border_color,
-                linewidth=0.5,
-            )
+            # Use adaptive rounding - smaller for narrow genes
+            rounding = min(0.02, width / 4, self.style.gene_height / 4)
+            if rounding < 0.005:
+                # Too small for rounding, use simple rectangle
+                rect = Rectangle(
+                    (x, y - half_h),
+                    width,
+                    self.style.gene_height,
+                    facecolor=facecolor,
+                    edgecolor=self.style.gene_border_color,
+                    linewidth=0.5,
+                )
+            else:
+                rect = FancyBboxPatch(
+                    (x, y - half_h),
+                    width,
+                    self.style.gene_height,
+                    boxstyle=f"round,pad=0,rounding_size={rounding:.4f}",
+                    facecolor=facecolor,
+                    edgecolor=self.style.gene_border_color,
+                    linewidth=0.5,
+                )
             self._ax.add_patch(rect)
 
             gene_labels.append((gene.center * self._x_scale + self._x_offset, gene.name))
@@ -248,14 +309,15 @@ class SyntenyVisualizer:
                 )
 
     def _draw_species_label(self, species: Species, y: float) -> None:
-        """Draw species name on the right."""
+        """Draw species name on the left."""
         self._ax.text(
-            1.02,
+            -0.08,
             y,
             species.display_name,
-            ha="left",
+            ha="right",
             va="center",
             fontsize=self.style.species_font_size,
+            style="italic",
         )
 
     def _draw_legend(self) -> None:
@@ -273,9 +335,11 @@ class SyntenyVisualizer:
         other_patch = mpatches.Patch(color=self.style.gene_color, label="other")
         legend_elements.append(other_patch)
 
+        # Place legend outside plot area to avoid overlap with species names
         self._ax.legend(
             handles=legend_elements,
-            loc="upper right",
+            loc="upper left",
+            bbox_to_anchor=(1.12, 1.0),
             frameon=False,
             fontsize=self.style.gene_label_font_size,
         )

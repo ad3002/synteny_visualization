@@ -1,0 +1,1233 @@
+{
+  "title": null,
+  "species": [
+    {
+      "species_id": "zebrafish",
+      "display_name": "Zebrafish",
+      "genes": [
+        {
+          "gene_id": "zebrafish:sh3d19",
+          "name": "sh3d19",
+          "chrom": "1",
+          "start": 26021001,
+          "end": 26060493,
+          "strand": ".",
+          "orthogroup": "4_15115"
+        },
+        {
+          "gene_id": "zebrafish:fhip1aa",
+          "name": "fhip1aa",
+          "chrom": "1",
+          "start": 26067007,
+          "end": 26110555,
+          "strand": ".",
+          "orthogroup": "4_15117"
+        },
+        {
+          "gene_id": "zebrafish:gatb",
+          "name": "gatb",
+          "chrom": "1",
+          "start": 26117974,
+          "end": 26152455,
+          "strand": ".",
+          "orthogroup": "4_15118"
+        },
+        {
+          "gene_id": "zebrafish:fbxw7",
+          "name": "fbxw7",
+          "chrom": "1",
+          "start": 26477780,
+          "end": 26764154,
+          "strand": ".",
+          "orthogroup": "4_15119"
+        },
+        {
+          "gene_id": "zebrafish:tmem154",
+          "name": "tmem154",
+          "chrom": "1",
+          "start": 26771933,
+          "end": 26799934,
+          "strand": ".",
+          "orthogroup": "4_15120"
+        },
+        {
+          "gene_id": "zebrafish:mnd1",
+          "name": "mnd1",
+          "chrom": "1",
+          "start": 26795545,
+          "end": 26831412,
+          "strand": ".",
+          "orthogroup": "4_15125"
+        },
+        {
+          "gene_id": "zebrafish:tmem131l",
+          "name": "tmem131l",
+          "chrom": "1",
+          "start": 26833079,
+          "end": 26935681,
+          "strand": ".",
+          "orthogroup": "4_15126"
+        },
+        {
+          "gene_id": "zebrafish:trim2a",
+          "name": "trim2a",
+          "chrom": "1",
+          "start": 26937271,
+          "end": 27001321,
+          "strand": ".",
+          "orthogroup": "4_15124"
+        },
+        {
+          "gene_id": "zebrafish:fhdc1",
+          "name": "fhdc1",
+          "chrom": "1",
+          "start": 27017266,
+          "end": 27058843,
+          "strand": ".",
+          "orthogroup": "4_15123"
+        },
+        {
+          "gene_id": "zebrafish:arfip1",
+          "name": "arfip1",
+          "chrom": "1",
+          "start": 27061196,
+          "end": 27105215,
+          "strand": ".",
+          "orthogroup": "4_15122"
+        }
+      ]
+    },
+    {
+      "species_id": "xenopus_s",
+      "display_name": "Xenopus laevis S",
+      "genes": [
+        {
+          "gene_id": "xenopus_s:LOC108706656",
+          "name": "LOC108706656",
+          "chrom": "1S",
+          "start": 44023504,
+          "end": 44038619,
+          "strand": ".",
+          "orthogroup": "4_15127"
+        },
+        {
+          "gene_id": "xenopus_s:tmem131l.S",
+          "name": "tmem131l.S",
+          "chrom": "1S",
+          "start": 44075768,
+          "end": 44151198,
+          "strand": ".",
+          "orthogroup": "4_15126"
+        },
+        {
+          "gene_id": "xenopus_s:trim2.S",
+          "name": "trim2.S",
+          "chrom": "1S",
+          "start": 44194433,
+          "end": 44245138,
+          "strand": ".",
+          "orthogroup": "4_15124"
+        },
+        {
+          "gene_id": "xenopus_s:fhdc1.S",
+          "name": "fhdc1.S",
+          "chrom": "1S",
+          "start": 44295188,
+          "end": 44342173,
+          "strand": ".",
+          "orthogroup": "4_15123"
+        },
+        {
+          "gene_id": "xenopus_s:arfip1.S",
+          "name": "arfip1.S",
+          "chrom": "1S",
+          "start": 44358182,
+          "end": 44441737,
+          "strand": ".",
+          "orthogroup": "4_15122"
+        },
+        {
+          "gene_id": "xenopus_s:LOC108706659",
+          "name": "LOC108706659",
+          "chrom": "1S",
+          "start": 44449150,
+          "end": 44467012,
+          "strand": ".",
+          "orthogroup": "4_15120"
+        },
+        {
+          "gene_id": "xenopus_s:LOC108706660",
+          "name": "LOC108706660",
+          "chrom": "1S",
+          "start": 44490834,
+          "end": 44613553,
+          "strand": ".",
+          "orthogroup": "4_15119"
+        },
+        {
+          "gene_id": "xenopus_s:fhip1a.S",
+          "name": "fhip1a.S",
+          "chrom": "1S",
+          "start": 45068451,
+          "end": 45144956,
+          "strand": ".",
+          "orthogroup": "4_15117"
+        },
+        {
+          "gene_id": "xenopus_s:sh3d19.S",
+          "name": "sh3d19.S",
+          "chrom": "1S",
+          "start": 45200353,
+          "end": 45244930,
+          "strand": ".",
+          "orthogroup": "4_15115"
+        }
+      ]
+    },
+    {
+      "species_id": "xenopus_l",
+      "display_name": "Xenopus laevis L",
+      "genes": [
+        {
+          "gene_id": "xenopus_l:LOC108699311",
+          "name": "LOC108699311",
+          "chrom": "1L",
+          "start": 58326401,
+          "end": 58334970,
+          "strand": ".",
+          "orthogroup": "4_15127"
+        },
+        {
+          "gene_id": "xenopus_l:tmem131l.L",
+          "name": "tmem131l.L",
+          "chrom": "1L",
+          "start": 58359958,
+          "end": 58434248,
+          "strand": ".",
+          "orthogroup": "4_15126"
+        },
+        {
+          "gene_id": "xenopus_l:LOC108699336",
+          "name": "LOC108699336",
+          "chrom": "1L",
+          "start": 58465937,
+          "end": 58500156,
+          "strand": ".",
+          "orthogroup": "4_15125"
+        },
+        {
+          "gene_id": "xenopus_l:trim2.L",
+          "name": "trim2.L",
+          "chrom": "1L",
+          "start": 58503274,
+          "end": 58574817,
+          "strand": ".",
+          "orthogroup": "4_15124"
+        },
+        {
+          "gene_id": "xenopus_l:fhdc1.L",
+          "name": "fhdc1.L",
+          "chrom": "1L",
+          "start": 58612645,
+          "end": 58648983,
+          "strand": ".",
+          "orthogroup": "4_15123"
+        },
+        {
+          "gene_id": "xenopus_l:arfip1.L",
+          "name": "arfip1.L",
+          "chrom": "1L",
+          "start": 58677211,
+          "end": 58776274,
+          "strand": ".",
+          "orthogroup": "4_15122"
+        },
+        {
+          "gene_id": "xenopus_l:LOC108699363",
+          "name": "LOC108699363",
+          "chrom": "1L",
+          "start": 58779629,
+          "end": 58800739,
+          "strand": ".",
+          "orthogroup": "4_15120"
+        },
+        {
+          "gene_id": "xenopus_l:fbxw7.L",
+          "name": "fbxw7.L",
+          "chrom": "1L",
+          "start": 58872367,
+          "end": 59012320,
+          "strand": ".",
+          "orthogroup": "4_15119"
+        },
+        {
+          "gene_id": "xenopus_l:gatb.L",
+          "name": "gatb.L",
+          "chrom": "1L",
+          "start": 59487514,
+          "end": 59547446,
+          "strand": ".",
+          "orthogroup": "4_15118"
+        },
+        {
+          "gene_id": "xenopus_l:fhip1a.L",
+          "name": "fhip1a.L",
+          "chrom": "1L",
+          "start": 59558242,
+          "end": 59653125,
+          "strand": ".",
+          "orthogroup": "4_15117"
+        },
+        {
+          "gene_id": "xenopus_l:sh3d19.L",
+          "name": "sh3d19.L",
+          "chrom": "1L",
+          "start": 59709509,
+          "end": 59780268,
+          "strand": ".",
+          "orthogroup": "4_15115"
+        }
+      ]
+    },
+    {
+      "species_id": "xenopus_t",
+      "display_name": "Xenopus tropicalis",
+      "genes": [
+        {
+          "gene_id": "xenopus_t:LOC100485927",
+          "name": "LOC100485927",
+          "chrom": "1",
+          "start": 55006443,
+          "end": 55009954,
+          "strand": ".",
+          "orthogroup": "4_15127"
+        },
+        {
+          "gene_id": "xenopus_t:tmem131l",
+          "name": "tmem131l",
+          "chrom": "1",
+          "start": 55025455,
+          "end": 55087948,
+          "strand": ".",
+          "orthogroup": "4_15126"
+        },
+        {
+          "gene_id": "xenopus_t:mnd1",
+          "name": "mnd1",
+          "chrom": "1",
+          "start": 55104496,
+          "end": 55129236,
+          "strand": ".",
+          "orthogroup": "4_15125"
+        },
+        {
+          "gene_id": "xenopus_t:trim2",
+          "name": "trim2",
+          "chrom": "1",
+          "start": 55132612,
+          "end": 55206756,
+          "strand": ".",
+          "orthogroup": "4_15124"
+        },
+        {
+          "gene_id": "xenopus_t:fhdc1",
+          "name": "fhdc1",
+          "chrom": "1",
+          "start": 55256945,
+          "end": 55290838,
+          "strand": ".",
+          "orthogroup": "4_15123"
+        },
+        {
+          "gene_id": "xenopus_t:arfip1",
+          "name": "arfip1",
+          "chrom": "1",
+          "start": 55315155,
+          "end": 55389127,
+          "strand": ".",
+          "orthogroup": "4_15122"
+        },
+        {
+          "gene_id": "xenopus_t:tmem154",
+          "name": "tmem154",
+          "chrom": "1",
+          "start": 55393801,
+          "end": 55410743,
+          "strand": ".",
+          "orthogroup": "4_15120"
+        },
+        {
+          "gene_id": "xenopus_t:fbxw7",
+          "name": "fbxw7",
+          "chrom": "1",
+          "start": 55440348,
+          "end": 55554897,
+          "strand": ".",
+          "orthogroup": "4_15119"
+        },
+        {
+          "gene_id": "xenopus_t:gatb",
+          "name": "gatb",
+          "chrom": "1",
+          "start": 55988092,
+          "end": 56054283,
+          "strand": ".",
+          "orthogroup": "4_15118"
+        },
+        {
+          "gene_id": "xenopus_t:fam160a1",
+          "name": "fam160a1",
+          "chrom": "1",
+          "start": 56063597,
+          "end": 56155492,
+          "strand": ".",
+          "orthogroup": "4_15117"
+        },
+        {
+          "gene_id": "xenopus_t:LOC116408476",
+          "name": "LOC116408476",
+          "chrom": "1",
+          "start": 56373270,
+          "end": 56384027,
+          "strand": ".",
+          "orthogroup": "4_15126"
+        },
+        {
+          "gene_id": "xenopus_t:sh3d19",
+          "name": "sh3d19",
+          "chrom": "1",
+          "start": 56469668,
+          "end": 56552484,
+          "strand": ".",
+          "orthogroup": "4_15115"
+        }
+      ]
+    },
+    {
+      "species_id": "chicken",
+      "display_name": "Chicken",
+      "genes": [
+        {
+          "gene_id": "chicken:TRIM2",
+          "name": "TRIM2",
+          "chrom": "4",
+          "start": 19219431,
+          "end": 19340397,
+          "strand": ".",
+          "orthogroup": "4_15124"
+        },
+        {
+          "gene_id": "chicken:MND1",
+          "name": "MND1",
+          "chrom": "4",
+          "start": 19343086,
+          "end": 19381584,
+          "strand": ".",
+          "orthogroup": "4_15125"
+        },
+        {
+          "gene_id": "chicken:TMEM131L",
+          "name": "TMEM131L",
+          "chrom": "4",
+          "start": 19394989,
+          "end": 19465465,
+          "strand": ".",
+          "orthogroup": "4_15126"
+        },
+        {
+          "gene_id": "chicken:TLR2A",
+          "name": "TLR2A",
+          "chrom": "4",
+          "start": 19473259,
+          "end": 19495377,
+          "strand": ".",
+          "orthogroup": "4_15127"
+        },
+        {
+          "gene_id": "chicken:SH3D19",
+          "name": "SH3D19",
+          "chrom": "4",
+          "start": 32817310,
+          "end": 32920824,
+          "strand": ".",
+          "orthogroup": "4_15115"
+        },
+        {
+          "gene_id": "chicken:FHIP1A",
+          "name": "FHIP1A",
+          "chrom": "4",
+          "start": 32912284,
+          "end": 33005056,
+          "strand": ".",
+          "orthogroup": "4_15117"
+        },
+        {
+          "gene_id": "chicken:GATB",
+          "name": "GATB",
+          "chrom": "4",
+          "start": 33010742,
+          "end": 33053861,
+          "strand": ".",
+          "orthogroup": "4_15118"
+        },
+        {
+          "gene_id": "chicken:FBXW7",
+          "name": "FBXW7",
+          "chrom": "4",
+          "start": 33255032,
+          "end": 33420934,
+          "strand": ".",
+          "orthogroup": "4_15119"
+        },
+        {
+          "gene_id": "chicken:TMEM154",
+          "name": "TMEM154",
+          "chrom": "4",
+          "start": 33439810,
+          "end": 33451673,
+          "strand": ".",
+          "orthogroup": "4_15120"
+        },
+        {
+          "gene_id": "chicken:ARFIP1",
+          "name": "ARFIP1",
+          "chrom": "4",
+          "start": 33463482,
+          "end": 33504256,
+          "strand": ".",
+          "orthogroup": "4_15122"
+        },
+        {
+          "gene_id": "chicken:FHDC1",
+          "name": "FHDC1",
+          "chrom": "4",
+          "start": 33507302,
+          "end": 33540545,
+          "strand": ".",
+          "orthogroup": "4_15123"
+        }
+      ]
+    },
+    {
+      "species_id": "quail",
+      "display_name": "Quail",
+      "genes": [
+        {
+          "gene_id": "quail:TRIM2",
+          "name": "TRIM2",
+          "chrom": "4",
+          "start": 17658981,
+          "end": 17741680,
+          "strand": ".",
+          "orthogroup": "4_15124"
+        },
+        {
+          "gene_id": "quail:MND1",
+          "name": "MND1",
+          "chrom": "4",
+          "start": 17742516,
+          "end": 17767300,
+          "strand": ".",
+          "orthogroup": "4_15125"
+        },
+        {
+          "gene_id": "quail:TMEM131L",
+          "name": "TMEM131L",
+          "chrom": "4",
+          "start": 17776514,
+          "end": 17837695,
+          "strand": ".",
+          "orthogroup": "4_15126"
+        },
+        {
+          "gene_id": "quail:LOC107313061",
+          "name": "LOC107313061",
+          "chrom": "4",
+          "start": 17839907,
+          "end": 17852774,
+          "strand": ".",
+          "orthogroup": "4_15127"
+        },
+        {
+          "gene_id": "quail:SH3D19",
+          "name": "SH3D19",
+          "chrom": "4",
+          "start": 29300001,
+          "end": 29381458,
+          "strand": ".",
+          "orthogroup": "4_15115"
+        },
+        {
+          "gene_id": "quail:FAM160A1",
+          "name": "FAM160A1",
+          "chrom": "4",
+          "start": 29398783,
+          "end": 29476188,
+          "strand": ".",
+          "orthogroup": "4_15117"
+        },
+        {
+          "gene_id": "quail:GATB",
+          "name": "GATB",
+          "chrom": "4",
+          "start": 29495593,
+          "end": 29536761,
+          "strand": ".",
+          "orthogroup": "4_15118"
+        },
+        {
+          "gene_id": "quail:FBXW7",
+          "name": "FBXW7",
+          "chrom": "4",
+          "start": 29729082,
+          "end": 29880620,
+          "strand": ".",
+          "orthogroup": "4_15119"
+        },
+        {
+          "gene_id": "quail:TMEM154",
+          "name": "TMEM154",
+          "chrom": "4",
+          "start": 29884342,
+          "end": 29906551,
+          "strand": ".",
+          "orthogroup": "4_15120"
+        },
+        {
+          "gene_id": "quail:ARFIP1",
+          "name": "ARFIP1",
+          "chrom": "4",
+          "start": 29916467,
+          "end": 29950546,
+          "strand": ".",
+          "orthogroup": "4_15122"
+        },
+        {
+          "gene_id": "quail:FHDC1",
+          "name": "FHDC1",
+          "chrom": "4",
+          "start": 29953544,
+          "end": 29986625,
+          "strand": ".",
+          "orthogroup": "4_15123"
+        }
+      ]
+    },
+    {
+      "species_id": "zebra_finch",
+      "display_name": "Zebra finch",
+      "genes": [
+        {
+          "gene_id": "zebra_finch:TLR2",
+          "name": "TLR2",
+          "chrom": "4",
+          "start": 42437856,
+          "end": 42445293,
+          "strand": ".",
+          "orthogroup": "4_15127"
+        },
+        {
+          "gene_id": "zebra_finch:TMEM131L",
+          "name": "TMEM131L",
+          "chrom": "4",
+          "start": 42468686,
+          "end": 42547694,
+          "strand": ".",
+          "orthogroup": "4_15126"
+        },
+        {
+          "gene_id": "zebra_finch:MND1",
+          "name": "MND1",
+          "chrom": "4",
+          "start": 42568858,
+          "end": 42616381,
+          "strand": ".",
+          "orthogroup": "4_15125"
+        },
+        {
+          "gene_id": "zebra_finch:TRIM2",
+          "name": "TRIM2",
+          "chrom": "4",
+          "start": 42616516,
+          "end": 42705412,
+          "strand": ".",
+          "orthogroup": "4_15124"
+        },
+        {
+          "gene_id": "zebra_finch:FHDC1",
+          "name": "FHDC1",
+          "chrom": "4",
+          "start": 42768003,
+          "end": 42804698,
+          "strand": ".",
+          "orthogroup": "4_15123"
+        },
+        {
+          "gene_id": "zebra_finch:ARFIP1",
+          "name": "ARFIP1",
+          "chrom": "4",
+          "start": 42810192,
+          "end": 42850991,
+          "strand": ".",
+          "orthogroup": "4_15122"
+        },
+        {
+          "gene_id": "zebra_finch:TIGD4",
+          "name": "TIGD4",
+          "chrom": "4",
+          "start": 42851031,
+          "end": 42852814,
+          "strand": ".",
+          "orthogroup": "4_15121"
+        },
+        {
+          "gene_id": "zebra_finch:TMEM154",
+          "name": "TMEM154",
+          "chrom": "4",
+          "start": 42869829,
+          "end": 42888150,
+          "strand": ".",
+          "orthogroup": "4_15120"
+        },
+        {
+          "gene_id": "zebra_finch:FBXW7",
+          "name": "FBXW7",
+          "chrom": "4",
+          "start": 42909106,
+          "end": 43084467,
+          "strand": ".",
+          "orthogroup": "4_15119"
+        },
+        {
+          "gene_id": "zebra_finch:GATB",
+          "name": "GATB",
+          "chrom": "4",
+          "start": 43289865,
+          "end": 43331936,
+          "strand": ".",
+          "orthogroup": "4_15118"
+        },
+        {
+          "gene_id": "zebra_finch:FHIP1A",
+          "name": "FHIP1A",
+          "chrom": "4",
+          "start": 43342718,
+          "end": 43421964,
+          "strand": ".",
+          "orthogroup": "4_15117"
+        },
+        {
+          "gene_id": "zebra_finch:SH3D19",
+          "name": "SH3D19",
+          "chrom": "4",
+          "start": 43451249,
+          "end": 43532225,
+          "strand": ".",
+          "orthogroup": "4_15115"
+        }
+      ]
+    },
+    {
+      "species_id": "canary",
+      "display_name": "Canary",
+      "genes": [
+        {
+          "gene_id": "canary:SH3D19",
+          "name": "SH3D19",
+          "chrom": "4",
+          "start": 27980432,
+          "end": 28062131,
+          "strand": ".",
+          "orthogroup": "4_15115"
+        },
+        {
+          "gene_id": "canary:FHIP1A",
+          "name": "FHIP1A",
+          "chrom": "4",
+          "start": 28091853,
+          "end": 28168978,
+          "strand": ".",
+          "orthogroup": "4_15117"
+        },
+        {
+          "gene_id": "canary:GATB",
+          "name": "GATB",
+          "chrom": "4",
+          "start": 28180168,
+          "end": 28222324,
+          "strand": ".",
+          "orthogroup": "4_15118"
+        },
+        {
+          "gene_id": "canary:FBXW7",
+          "name": "FBXW7",
+          "chrom": "4",
+          "start": 28427001,
+          "end": 28604083,
+          "strand": ".",
+          "orthogroup": "4_15119"
+        },
+        {
+          "gene_id": "canary:TMEM154",
+          "name": "TMEM154",
+          "chrom": "4",
+          "start": 28622774,
+          "end": 28644057,
+          "strand": ".",
+          "orthogroup": "4_15120"
+        },
+        {
+          "gene_id": "canary:TIGD4",
+          "name": "TIGD4",
+          "chrom": "4",
+          "start": 28657053,
+          "end": 28662628,
+          "strand": ".",
+          "orthogroup": "4_15121"
+        },
+        {
+          "gene_id": "canary:ARFIP1",
+          "name": "ARFIP1",
+          "chrom": "4",
+          "start": 28662733,
+          "end": 28703356,
+          "strand": ".",
+          "orthogroup": "4_15122"
+        },
+        {
+          "gene_id": "canary:FHDC1",
+          "name": "FHDC1",
+          "chrom": "4",
+          "start": 28708551,
+          "end": 28745401,
+          "strand": ".",
+          "orthogroup": "4_15123"
+        },
+        {
+          "gene_id": "canary:TRIM2",
+          "name": "TRIM2",
+          "chrom": "4",
+          "start": 28778117,
+          "end": 28903788,
+          "strand": ".",
+          "orthogroup": "4_15124"
+        },
+        {
+          "gene_id": "canary:MND1",
+          "name": "MND1",
+          "chrom": "4",
+          "start": 28909722,
+          "end": 28950987,
+          "strand": ".",
+          "orthogroup": "4_15125"
+        },
+        {
+          "gene_id": "canary:TMEM131L",
+          "name": "TMEM131L",
+          "chrom": "4",
+          "start": 28972064,
+          "end": 29051615,
+          "strand": ".",
+          "orthogroup": "4_15126"
+        },
+        {
+          "gene_id": "canary:LOC103826229",
+          "name": "LOC103826229",
+          "chrom": "4",
+          "start": 29069586,
+          "end": 29074480,
+          "strand": ".",
+          "orthogroup": "4_15127"
+        }
+      ]
+    },
+    {
+      "species_id": "anolis",
+      "display_name": "Anolis lizard",
+      "genes": [
+        {
+          "gene_id": "anolis:sh3d19",
+          "name": "sh3d19",
+          "chrom": "5",
+          "start": 48993249,
+          "end": 49079340,
+          "strand": ".",
+          "orthogroup": "4_15115"
+        },
+        {
+          "gene_id": "anolis:fhip1a",
+          "name": "fhip1a",
+          "chrom": "5",
+          "start": 49118633,
+          "end": 49217800,
+          "strand": ".",
+          "orthogroup": "4_15117"
+        },
+        {
+          "gene_id": "anolis:gatb",
+          "name": "gatb",
+          "chrom": "5",
+          "start": 49224506,
+          "end": 49292830,
+          "strand": ".",
+          "orthogroup": "4_15118"
+        },
+        {
+          "gene_id": "anolis:fbxw7",
+          "name": "fbxw7",
+          "chrom": "5",
+          "start": 49793396,
+          "end": 49958776,
+          "strand": ".",
+          "orthogroup": "4_15119"
+        },
+        {
+          "gene_id": "anolis:tmem154",
+          "name": "tmem154",
+          "chrom": "5",
+          "start": 50006613,
+          "end": 50049718,
+          "strand": ".",
+          "orthogroup": "4_15120"
+        },
+        {
+          "gene_id": "anolis:tigd4",
+          "name": "tigd4",
+          "chrom": "5",
+          "start": 50077762,
+          "end": 50080833,
+          "strand": ".",
+          "orthogroup": "4_15121"
+        },
+        {
+          "gene_id": "anolis:arfip1",
+          "name": "arfip1",
+          "chrom": "5",
+          "start": 50091503,
+          "end": 50153364,
+          "strand": ".",
+          "orthogroup": "4_15122"
+        },
+        {
+          "gene_id": "anolis:fhdc1",
+          "name": "fhdc1",
+          "chrom": "5",
+          "start": 50177691,
+          "end": 50251395,
+          "strand": ".",
+          "orthogroup": "4_15123"
+        },
+        {
+          "gene_id": "anolis:trim2",
+          "name": "trim2",
+          "chrom": "5",
+          "start": 50364644,
+          "end": 50452597,
+          "strand": ".",
+          "orthogroup": "4_15124"
+        },
+        {
+          "gene_id": "anolis:mnd1",
+          "name": "mnd1",
+          "chrom": "5",
+          "start": 50457313,
+          "end": 50486943,
+          "strand": ".",
+          "orthogroup": "4_15125"
+        },
+        {
+          "gene_id": "anolis:tmem131l",
+          "name": "tmem131l",
+          "chrom": "5",
+          "start": 50522025,
+          "end": 50614751,
+          "strand": ".",
+          "orthogroup": "4_15126"
+        },
+        {
+          "gene_id": "anolis:LOC100564196",
+          "name": "LOC100564196",
+          "chrom": "5",
+          "start": 50621067,
+          "end": 50642611,
+          "strand": ".",
+          "orthogroup": "4_15127"
+        }
+      ]
+    },
+    {
+      "species_id": "mouse",
+      "display_name": "Mouse",
+      "genes": [
+        {
+          "gene_id": "mouse:Tlr2",
+          "name": "Tlr2",
+          "chrom": "3",
+          "start": 83743578,
+          "end": 83749045,
+          "strand": ".",
+          "orthogroup": "4_15127"
+        },
+        {
+          "gene_id": "mouse:Tmem131l",
+          "name": "Tmem131l",
+          "chrom": "3",
+          "start": 83804954,
+          "end": 83947497,
+          "strand": ".",
+          "orthogroup": "4_15126"
+        },
+        {
+          "gene_id": "mouse:Mnd1",
+          "name": "Mnd1",
+          "chrom": "3",
+          "start": 83995239,
+          "end": 84063084,
+          "strand": ".",
+          "orthogroup": "4_15125"
+        },
+        {
+          "gene_id": "mouse:Trim2",
+          "name": "Trim2",
+          "chrom": "3",
+          "start": 84067745,
+          "end": 84215659,
+          "strand": ".",
+          "orthogroup": "4_15124"
+        },
+        {
+          "gene_id": "mouse:Fhdc1",
+          "name": "Fhdc1",
+          "chrom": "3",
+          "start": 84349502,
+          "end": 84387746,
+          "strand": ".",
+          "orthogroup": "4_15123"
+        },
+        {
+          "gene_id": "mouse:Arfip1",
+          "name": "Arfip1",
+          "chrom": "3",
+          "start": 84403399,
+          "end": 84490075,
+          "strand": ".",
+          "orthogroup": "4_15122"
+        },
+        {
+          "gene_id": "mouse:Tigd4",
+          "name": "Tigd4",
+          "chrom": "3",
+          "start": 84500880,
+          "end": 84504339,
+          "strand": ".",
+          "orthogroup": "4_15121"
+        },
+        {
+          "gene_id": "mouse:Tmem154",
+          "name": "Tmem154",
+          "chrom": "3",
+          "start": 84573498,
+          "end": 84611882,
+          "strand": ".",
+          "orthogroup": "4_15120"
+        },
+        {
+          "gene_id": "mouse:Fbxw7",
+          "name": "Fbxw7",
+          "chrom": "3",
+          "start": 84721900,
+          "end": 84886505,
+          "strand": ".",
+          "orthogroup": "4_15119"
+        },
+        {
+          "gene_id": "mouse:Gatb",
+          "name": "Gatb",
+          "chrom": "3",
+          "start": 85481408,
+          "end": 85562945,
+          "strand": ".",
+          "orthogroup": "4_15118"
+        },
+        {
+          "gene_id": "mouse:Fhip1a",
+          "name": "Fhip1a",
+          "chrom": "3",
+          "start": 85567369,
+          "end": 85653516,
+          "strand": ".",
+          "orthogroup": "4_15117"
+        },
+        {
+          "gene_id": "mouse:Sh3d19",
+          "name": "Sh3d19",
+          "chrom": "3",
+          "start": 85878111,
+          "end": 86037833,
+          "strand": ".",
+          "orthogroup": "4_15115"
+        }
+      ]
+    },
+    {
+      "species_id": "human",
+      "display_name": "Human",
+      "genes": [
+        {
+          "gene_id": "human:SH3D19",
+          "name": "SH3D19",
+          "chrom": "4",
+          "start": 151120280,
+          "end": 151325605,
+          "strand": ".",
+          "orthogroup": "4_15115"
+        },
+        {
+          "gene_id": "human:FHIP1A",
+          "name": "FHIP1A",
+          "chrom": "4",
+          "start": 151409175,
+          "end": 151670503,
+          "strand": ".",
+          "orthogroup": "4_15117"
+        },
+        {
+          "gene_id": "human:GATB",
+          "name": "GATB",
+          "chrom": "4",
+          "start": 151670503,
+          "end": 151761007,
+          "strand": ".",
+          "orthogroup": "4_15118"
+        },
+        {
+          "gene_id": "human:FBXW7",
+          "name": "FBXW7",
+          "chrom": "4",
+          "start": 152320543,
+          "end": 152536092,
+          "strand": ".",
+          "orthogroup": "4_15119"
+        },
+        {
+          "gene_id": "human:TMEM154",
+          "name": "TMEM154",
+          "chrom": "4",
+          "start": 152618627,
+          "end": 152679997,
+          "strand": ".",
+          "orthogroup": "4_15120"
+        },
+        {
+          "gene_id": "human:TIGD4",
+          "name": "TIGD4",
+          "chrom": "4",
+          "start": 152769353,
+          "end": 152779730,
+          "strand": ".",
+          "orthogroup": "4_15121"
+        },
+        {
+          "gene_id": "human:ARFIP1",
+          "name": "ARFIP1",
+          "chrom": "4",
+          "start": 152779953,
+          "end": 152912357,
+          "strand": ".",
+          "orthogroup": "4_15122"
+        },
+        {
+          "gene_id": "human:FHDC1",
+          "name": "FHDC1",
+          "chrom": "4",
+          "start": 152911338,
+          "end": 152979671,
+          "strand": ".",
+          "orthogroup": "4_15123"
+        },
+        {
+          "gene_id": "human:TRIM2",
+          "name": "TRIM2",
+          "chrom": "4",
+          "start": 153152162,
+          "end": 153339317,
+          "strand": ".",
+          "orthogroup": "4_15124"
+        },
+        {
+          "gene_id": "human:MND1",
+          "name": "MND1",
+          "chrom": "4",
+          "start": 153344648,
+          "end": 153415118,
+          "strand": ".",
+          "orthogroup": "4_15125"
+        },
+        {
+          "gene_id": "human:TMEM131L",
+          "name": "TMEM131L",
+          "chrom": "4",
+          "start": 153466359,
+          "end": 153636711,
+          "strand": ".",
+          "orthogroup": "4_15126"
+        },
+        {
+          "gene_id": "human:TLR2",
+          "name": "TLR2",
+          "chrom": "4",
+          "start": 153684279,
+          "end": 153710637,
+          "strand": ".",
+          "orthogroup": "4_15127"
+        },
+        {
+          "gene_id": "human:RNF175",
+          "name": "RNF175",
+          "chrom": "4",
+          "start": 153710159,
+          "end": 153760024,
+          "strand": ".",
+          "orthogroup": "4_15128"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "name": "TIGD4",
+      "color": "#e74c3c",
+      "label": "Gene: TIGD4"
+    },
+    {
+      "name": "Tigd4",
+      "color": "#e74c3c",
+      "label": "Gene: Tigd4"
+    },
+    {
+      "name": "tigd4",
+      "color": "#e74c3c",
+      "label": "Gene: tigd4"
+    }
+  ],
+  "style": {
+    "gene_color": "#808080",
+    "gene_border_color": "#404040",
+    "link_color": "#cccccc",
+    "link_alpha": 0.4,
+    "highlight_link_alpha": 0.6,
+    "chromosome_color": "#000000",
+    "gene_height": 0.25,
+    "chromosome_width": 1.0,
+    "species_spacing": 1.0,
+    "figure_width": 16.0,
+    "figure_height_per_species": 0.7,
+    "dpi": 150,
+    "species_font_size": 10,
+    "gene_label_font_size": 8,
+    "scale_font_size": 9,
+    "show_scale_bar": true,
+    "show_gene_labels": true,
+    "gene_label_position": "bottom"
+  }
+}

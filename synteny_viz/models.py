@@ -19,8 +19,8 @@ class Gene(BaseModel):
     gene_id: str = Field(..., description="Unique gene identifier")
     name: str = Field(..., description="Gene name for display")
     chrom: str = Field(..., description="Chromosome/scaffold name")
-    start: int = Field(..., ge=0, description="Start position (0-based)")
-    end: int = Field(..., gt=0, description="End position")
+    start: int = Field(..., description="Start position (0-based, can be negative if normalized)")
+    end: int = Field(..., description="End position")
     strand: Strand = Field(default=Strand.UNKNOWN, description="Strand orientation")
     orthogroup: str | None = Field(default=None, description="Orthogroup ID for linking")
 
@@ -61,6 +61,7 @@ class HighlightGene(BaseModel):
     """Gene to highlight across all species."""
 
     name: str = Field(..., description="Gene name to highlight")
+    orthogroup: str | None = Field(default=None, description="Orthogroup ID to highlight")
     color: str = Field(default="#e74c3c", description="Highlight color (hex)")
     label: str | None = Field(default=None, description="Custom label in legend")
 
@@ -121,7 +122,11 @@ class SyntenyData(BaseModel):
     def is_highlighted(self, gene: Gene) -> HighlightGene | None:
         """Check if gene should be highlighted."""
         for h in self.highlights:
-            if gene.name == h.name or (gene.orthogroup and gene.orthogroup == h.name):
+            # Match by gene name (case-insensitive)
+            if gene.name.upper() == h.name.upper():
+                return h
+            # Match by orthogroup
+            if h.orthogroup and gene.orthogroup and gene.orthogroup == h.orthogroup:
                 return h
         return None
 
